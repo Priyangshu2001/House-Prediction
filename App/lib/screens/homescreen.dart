@@ -4,6 +4,7 @@ import 'package:app/Business/house_bloc.dart';
 import 'package:app/Model/Data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
 
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       TextFormField(
                         controller: _sqftController,
                         decoration: InputDecoration(
-                          labelText: '600',
+                          labelText: 'Square Foot',
                           errorBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5),
                               borderSide: BorderSide(
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderSide: BorderSide(
                                   color: Colors.blue, width: 1.0)
                           ),
-                          hintText: 'Enter Square foot',
+                          hintText: '600',
 
                         ),
                         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -200,6 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           controller: _address,
                           decoration: InputDecoration(
                             labelText: 'Address',
+
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5),
                                 borderSide: BorderSide(color: Colors.blue,
@@ -246,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Text("Predicted Price:", style: TextStyle(fontSize: 20,),),
-                             Text("${state.predicted.toString()} Lacs",
+                             Text("${state.predicted.predicted.toString()} Lacs",
                                style: TextStyle(fontSize: 50,),)
                           ],
                         ),

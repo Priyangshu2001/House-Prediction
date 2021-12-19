@@ -18,6 +18,7 @@ class Repository{
     print(response.statusCode);
     var json=jsonDecode(response.body);
     print("oojo");
+    print(json['predicted']);
     return json['predicted'];
   }
 }
